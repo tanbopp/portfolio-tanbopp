@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tanbopp</title>
+
+	<!-- cdn tailwindcss -->
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
+
+</head>
+<body class="dark:text-white dark:bg-purple-900 overflow-hidden">
+
+	<div class="w-full h-screen flex flex-col justify-between items-center">
+		<img src="https://images.pexels.com/photos/6985118/pexels-photo-6985118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-full h-screen object-cover absolute">
+
+		<audio id="myAudio" src="assets/music.mp3" autoplay></audio>
+
+		<header class="w-full py-8 px-32 max-md:px-4 max-md:py-4 flex z-50">
+			<h1 class="text-3xl font-semibold"><span class="bg-blue-500 pl-2">Tan</span>bopp.</h1>
+		</header>
+
+		<div class="flex flex-col justify-center px-4 items-center gap-4 z-50">
+			<h1 class="text-8xl font-extrabold text-center text-white" style="text-shadow: 0px 0px 75px rgba(255, 255, 255, 8);">COMING SOON</h1>
+			<p class="uppercase font-semibold text-center">Situs Web akan terbuka di 14 September 2023</p>
+
+			<div><button onclick="playAudio()" class="outline-0 text-blue-500 font-semibold" style="text-shadow: 0px 0px 15px rgba(59, 130, 246, 8);">Play Music</button></div>
+		</div>
+
+		<div class="w-full flex flex-col py-6 px-32 z-50">
+			<p class="font-semibold max-md:text-center">Launching in</p>
+			<div class="flex gap-2 text-3xl max-md:items-center">
+				<div><span id="days">0</span><span class="text-xs text-white/50">hari</span></div>
+				<div><span id="hours">0</span><span class="text-xs text-white/50">jam</span></div>
+				<div><span id="minutes">0</span><span class="text-xs text-white/50">menit</span></div>
+				<div><span id="seconds">0</span><span class="text-xs text-white/50">detik</span></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		const targetDate = new Date("2023-09-14T00:00:00").getTime();
+
+		function formatTime(time) {
+			return time < 10 ? `0${time}` : time;
+		}
+
+	const timer = setInterval(function() {
+		const currentDate = new Date().getTime();
+		const timeLeft = targetDate - currentDate;
+
+		const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+		const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+		const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    // Menampilkan hitungan mundur pada elemen HTML dengan dua digit
+    document.getElementById("days").innerText = formatTime(days);
+    document.getElementById("hours").innerText = formatTime(hours);
+    document.getElementById("minutes").innerText = formatTime(minutes);
+    document.getElementById("seconds").innerText = formatTime(seconds);
+
+    // Jika hitungan mundur berakhir, hentikan interval
+    if (timeLeft <= 0) {
+    	clearInterval(timer);
+    }
+}, 1000);
+
+</script>
+
+	<script>
+		var audio = document.getElementById("myAudio");
+
+        // Fungsi untuk memainkan audio
+        function playAudio() {
+            audio.play();
+        }	
+    </script>
+</body>
+</html>
