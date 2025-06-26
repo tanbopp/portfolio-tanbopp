@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About | Tanbopp</title>
+	<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+	<!-- Tailwindcss CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+	    tailwind.config = {
+	      theme: {
+	        extend: {
+	          colors: {
+	            primary: '#128AEB'
+	          }
+	        }
+	      }
+	    }
+	</script>
+	<!-- AOS Animation CSS -->
+	<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+		body {
+			font-family: 'Inter', sans-serif;
+		}
+	</style>
+</head>
+<body class="bg-black text-white">
+	<div class="h-11 bg-neutral-900"></div>
+	<nav class="w-full bg-neutral-900/75 z-50 backdrop-blur-xl text-neutral-300/80 px-6 fixed top-0">
+	  <!-- Main Navigation -->
+	  <div class="max-w-5xl mx-auto h-11 flex items-center justify-between">
+	  	<!-- Logo -->
+	  	<a href="#" class="flex items-center md:hidden">
+	  	  <img src="assets/brand/logo.svg" class="h-[19px]">
+	  	</a>
+	    
+	    <!-- Desktop Menu -->
+	    <div class="hidden md:flex w-full justify-between items-center font-medium space-x-8">
+	    	<!-- Logo -->
+	    	<a href="index.html" class="flex items-center">
+	    	  <img src="assets/brand/logo.svg" class="h-[19px]">
+	    	</a>
+
+	      	<a href="about.html" class="py-2 text-neutral-400 transition duration-300">About</a>
+	      	<a href="#" class="py-2 hover:text-neutral-200 transition duration-300">Design</a>
+	      	<a href="#" class="py-2 hover:text-neutral-200 transition duration-300">Develop</a>
+	      	<a href="#" class="py-2 hover:text-neutral-200 transition duration-300">Photos</a>
+	      	<a href="#" class="py-2 hover:text-neutral-200 transition duration-300">Experience</a>
+	      	<a href="#" class="py-2 hover:text-neutral-200 transition duration-300">Contact</a>
+
+	      	<button class="hover:text-neutral-200">
+	        	<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	          	<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+	        	</svg>
+	      	</button>
+	    </div>
+	    
+	    <!-- Search and Mobile Menu -->
+	    <div class="flex items-center space-x-6">
+	      
+	      <button class="md:hidden hover:opacity-80" id="menu-toggle">
+	        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+	        </svg>
+	      </button>
+	    </div>
+	  </div>
+	  
+	  <!-- Mobile Menu -->
+	  <div class="md:hidden hidden bg-transparent w-full py-4 px-4" id="mobile-menu">
+	    <div class="space-y-4">
+	      <div class="border-b border-gray-700 pb-2">
+	        <button class="flex items-center justify-between w-full py-2">
+	          <span>Discover</span>
+	          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+	          </svg>
+	        </button>
+	        <div class="pl-4 hidden">
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Overview</a>
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Technologies</a>
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Documentation</a>
+	        </div>
+	      </div>
+	      
+	      <div class="border-b border-gray-700 pb-2">
+	        <button class="flex items-center justify-between w-full py-2">
+	          <span>Design</span>
+	          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+	          </svg>
+	        </button>
+	        <div class="pl-4 hidden">
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Human Interface</a>
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Resources</a>
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Design Tools</a>
+	        </div>
+	      </div>
+	      
+	      <a href="#" class="block py-2 border-b border-gray-700">Develop</a>
+	      <a href="#" class="block py-2 border-b border-gray-700">Distribute</a>
+	      <a href="#" class="block py-2 border-b border-gray-700">Support</a>
+	    </div>
+	  </div>
+	</nav>
+
+	<section class="bg-neutral-900 py-24 px-6">
+	  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-end justify-between gap-8 md:gap-0">
+	    <div class="md:mb-16 mb-8 md:text-left text-center w-full md:w-2/3">
+	      <h1 class="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-2">Sultan Rahmatullah</h1>
+	      <h2 class="text-2xl md:text-3xl font-normal text-neutral-600 dark:text-neutral-300">Software Engineer</h2>
+	    </div>
+	    <div class="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary shadow-lg bg-neutral-200 dark:bg-neutral-900 flex-shrink-0">
+	      <img src="assets/profile.jpg" class="w-full h-full object-cover" alt="Profile">
+	    </div>
+	  </div>
+	</section>
+
+	<section class="bg-black py-20 pb-5 px-6">
+	  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 bg-neutral-900 p-10 rounded-3xl shadow-lg mt-[-60px] relative z-10" data-aos="fade-in" data-aos-duration="1000" data-aos-once="true">
+	    <div class="text-neutral-300 text-base leading-relaxed space-y-6">
+	      <h3 class="text-3xl text-white font-semibold mb-4">About Me</h3>
+	      <p>Sultan Rahmatullah is a Software Engineer with a passion for building digital products that are not only functional, but also deliver delightful user experiences and elegant design. He specializes in mobile and web development using modern technologies such as iOS, Flutter, and .NET.</p>
+	      <p>He believes that collaboration, good communication, and a commitment to code quality are the keys to creating scalable and maintainable applications. Sultan is always eager to learn and keep up with the latest technology trends.</p>
+	      <p>Prior to his current role, Sultan has contributed to various projects, focusing on UI/UX, system architecture, and cross-platform development.</p>
+	    </div>
+	    <div class="text-neutral-300 text-base leading-relaxed space-y-6">
+	      <h3 class="text-3xl text-white font-semibold mb-4">Experience</h3>
+	      <div>
+	        <p class="font-semibold">Mobile Developer</p>
+	        <p class="text-neutral-400 text-sm mb-2">PT. Digital Inovasi | 2022 - Sekarang</p>
+	        <ul class="list-disc list-inside text-neutral-400 mb-4">
+	          <li>Developed and maintained iOS and Flutter apps for various clients.</li>
+	          <li>Collaborated with UI/UX designers and backend teams.</li>
+	        </ul>
+	        <p class="font-semibold">Software Engineer</p>
+	        <p class="text-neutral-400 text-sm mb-2">Freelance | 2020 - 2022</p>
+	        <ul class="list-disc list-inside text-neutral-400">
+	          <li>Built web and mobile solutions for startups and SMEs.</li>
+	          <li>Focused on clean code and scalable architecture.</li>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	</section>
+
+	<section class="bg-black px-6">
+	  <div class="max-w-5xl mx-auto bg-neutral-900 rounded-3xl shadow-lg" data-aos="fade-in" data-aos-duration="1000" data-aos-once="true">
+	    <div class="grid grid-cols-2 md:grid-cols-4 bg-gradient-to-br from-transparent to-neutral-800/80 gap-8 p-10 justify-items-center">
+	      <div class="flex flex-col items-center">
+	        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" class="w-12 h-12 mb-2">
+	        <span class="text-neutral-200">Swift</span>
+	      </div>
+	      <div class="flex flex-col items-center">
+	        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="w-12 h-12 mb-2">
+	        <span class="text-neutral-200">Flutter</span>
+	      </div>
+	      <div class="flex flex-col items-center">
+	        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" class="w-12 h-12 mb-2">
+	        <span class="text-neutral-200">Dart</span>
+	      </div>
+	      <div class="flex flex-col items-center">
+	        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="w-12 h-12 mb-2">
+	        <span class="text-neutral-200">C#</span>
+	      </div>
+	      <div class="flex flex-col items-center">
+	        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET" class="w-12 h-12 mb-2">
+	        <span class="text-neutral-200">.NET</span>
+	      </div>
+	      <div class="flex flex-col items-center">
+	        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12 mb-2">
+	        <span class="text-neutral-200">JavaScript</span>
+	      </div>
+	      <div class="flex flex-col items-center">
+	        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-12 h-12 mb-2">
+	        <span class="text-neutral-200">TypeScript</span>
+	      </div>
+	      <div class="flex flex-col items-center">
+	        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-12 h-12 mb-2">
+	        <span class="text-neutral-200">HTML5</span>
+	      </div>
+	    </div>
+	    <div class="text-center p-9 border-t border-black">
+	    	<h1 class="text-2xl font-semibold mb-3">My Skills Programming</h1>
+	    	<p class="font-normal">Celebrate innovation, ingenuity, and technical achievement in app and game design.</p>
+	    </div>
+	  </div>
+	</section>
+
+	<section class="bg-black py-5 px-6">
+	  <div class="max-w-5xl mx-auto bg-neutral-900 h-[500px] overflow-hidden rounded-3xl shadow-lg flex" data-aos="fade-in" data-aos-duration="1000" data-aos-once="true">
+	    <div class="absolute z-10 p-10 max-w-lg flex flex-col h-full justify-end">
+	    	<h3 class="text-3xl text-white font-semibold mb-4">Education</h3>
+	    	<div class="flex flex-col items-left">
+	    	  <p class="font-semibold text-xl text-neutral-200">SMK Jakarta Pusat 1</p>
+	    	  <p class="text-neutral-400">Administrasi Perkantoran, 2021 - 2024</p>
+	    	  <p class="mt-4 text-neutral-300 max-w-xl text-lg">Graduated with honors. Focused on software engineering, mobile development, and UI/UX design. Active in tech communities and student organizations.</p>
+	    	</div>
+	    </div>
+	    <div class="w-full relative">
+	    	<div class="w-full h-full bg-gradient-to-tr from-black/90 via-black/50 to-transparent absolute"></div>
+	    	<img src="https://scontent.fcgk33-1.fna.fbcdn.net/v/t39.30808-6/474761227_1128911095694547_5992789753588429430_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=GZ6bzMK745EQ7kNvwGrE91I&_nc_oc=Adk0dyBk3E_zfLT8ODGXC1BesXrzYrpysTVDkp4vPECix-dbYHqXEB_9bOBOH8wHctk&_nc_zt=23&_nc_ht=scontent.fcgk33-1.fna&_nc_gid=PnEIg8Gs_GGtBWaBI2xo1g&oh=00_AfMFc_SDHvt0mhnxMhwqo_maCOBLg0kDL2QPzbLafjI6oQ&oe=6863165A" class="h-full w-full object-cover">
+	    </div>
+	  </div>
+	</section>
+
+	<footer class="py-8 px-6 bg-neutral-900 text-neutral-400">
+	    <div class="max-w-6xl mx-auto text-center">
+	        <p>© 2025 Tanbopp. All rights reserved.</p>
+	    </div>
+	</footer>
+
+	<!-- AOS Animation JS -->
+	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<script>
+	  AOS.init();
+	</script>
+</body>
+</html>

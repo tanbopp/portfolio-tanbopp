@@ -1,84 +1,289 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tanbopp</title>
+	<title>Tanbopp Portfolio</title>
+	<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 
-	<!-- cdn tailwindcss -->
+	<!-- Tailwindcss CDN -->
 	<script src="https://cdn.tailwindcss.com"></script>
-
-	<!-- font awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
-
-</head>
-<body class="dark:text-white dark:bg-purple-900 overflow-x-hidden">
-
-	<div class="w-full h-screen flex flex-col justify-between items-center">
-		<img src="https://images.pexels.com/photos/6985118/pexels-photo-6985118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="w-full h-screen object-cover absolute">
-
-		<audio id="myAudio" src="assets/music.mp3" autoplay></audio>
-
-		<header class="w-full py-8 px-32 max-md:px-4 max-md:py-4 flex z-50">
-			<h1 class="text-3xl font-semibold"><span class="bg-blue-500 pl-2">Tan</span>bopp.</h1>
-		</header>
-
-		<div class="flex flex-col justify-center px-4 font-inter items-center gap-4 z-50">
-			<h1 class="text-8xl font-extrabold text-center text-white max-md:text-4xl" style="text-shadow: 0px 0px 75px rgba(255, 255, 255, 8);">COMING SOON</h1>
-			<p class="uppercase font-semibold text-center max-md:font-bold max-md:text-xs">Akan terbuka di 14 September 2023</p>
-
-			<div><button onclick="playAudio()" class="outline-0 text-blue-500 font-semibold select-none" style="text-shadow: 0px 0px 15px rgba(59, 130, 246, 8);">Play Music</button></div>
-		</div>
-
-		<div class="w-full flex flex-col py-6 px-32 z-50 max-md:items-center">
-			<p class="font-semibold max-md:text-center">Launching in</p>
-			<div class="flex gap-2 text-3xl max-md:items-center max-md:text-2xl">
-				<div><span id="days">0</span><span class="text-xs text-white/50">hari</span></div>
-				<div><span id="hours">0</span><span class="text-xs text-white/50">jam</span></div>
-				<div><span id="minutes">0</span><span class="text-xs text-white/50">menit</span></div>
-				<div><span id="seconds">0</span><span class="text-xs text-white/50">detik</span></div>
-			</div>
-		</div>
-	</div>
-
-
 	<script>
-		const targetDate = new Date("2023-09-14T00:00:00").getTime();
+	    tailwind.config = {
+	      theme: {
+	        extend: {
+	          colors: {
+	            primary: '#128AEB'
+	          }
+	        }
+	      }
+	    }
+	  </script>
 
-		function formatTime(time) {
-			return time < 10 ? `0${time}` : time;
+	<!-- AOS Animation CSS -->
+	<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+		body {
+			font-family: 'Inter', sans-serif;
 		}
+	</style>
+</head>
+<body class="bg-black text-white">
+	<nav class="w-full bg-neutral-900/75 z-50 backdrop-blur-xl text-neutral-300/80 px-6 fixed top-0">
+	  <!-- Main Navigation -->
+	  <div class="max-w-5xl mx-auto h-11 flex items-center justify-between">
+	  	<!-- Logo -->
+	  	<a href="#" class="flex items-center md:hidden">
+	  	  <img src="assets/brand/logo.svg" class="h-[19px]">
+	  	</a>
+	    
+	    <!-- Desktop Menu -->
+	    <div class="hidden md:flex w-full justify-between items-center font-medium space-x-8">
+	    	<!-- Logo -->
+	    	<a href="index.html" class="flex items-center">
+	    	  <img src="assets/brand/logo.svg" class="h-[19px]">
+	    	</a>
 
-	const timer = setInterval(function() {
-		const currentDate = new Date().getTime();
-		const timeLeft = targetDate - currentDate;
+	      	<a href="about.html" class="py-2 hover:text-neutral-200 transition duration-300">About</a>
+	      	<a href="design.html" class="py-2 hover:text-neutral-200 transition duration-300">Design</a>
+	      	<a href="develop.html" class="py-2 hover:text-neutral-200 transition duration-300">Develop</a>
+	      	<a href="photos.html" class="py-2 hover:text-neutral-200 transition duration-300">Photos</a>
+	      	<a href="experience.html" class="py-2 hover:text-neutral-200 transition duration-300">Experience</a>
+	      	<a href="contact.html" class="py-2 hover:text-neutral-200 transition duration-300">Contact</a>
 
-		const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-		const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-		const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-		const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+	      	<button class="hover:text-neutral-200">
+	        	<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	          	<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+	        	</svg>
+	      	</button>
+	    </div>
+	    
+	    <!-- Search and Mobile Menu -->
+	    <div class="flex items-center space-x-6">
+	      
+	      <button class="md:hidden hover:opacity-80" id="menu-toggle">
+	        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+	        </svg>
+	      </button>
+	    </div>
+	  </div>
+	  
+	  <!-- Mobile Menu -->
+	  <div class="md:hidden hidden bg-transparent w-full py-4 px-4" id="mobile-menu">
+	    <div class="space-y-4">
+	      <div class="border-b border-gray-700 pb-2">
+	        <button class="flex items-center justify-between w-full py-2">
+	          <span>Discover</span>
+	          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+	          </svg>
+	        </button>
+	        <div class="pl-4 hidden">
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Overview</a>
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Technologies</a>
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Documentation</a>
+	        </div>
+	      </div>
+	      
+	      <div class="border-b border-gray-700 pb-2">
+	        <button class="flex items-center justify-between w-full py-2">
+	          <span>Design</span>
+	          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+	            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+	          </svg>
+	        </button>
+	        <div class="pl-4 hidden">
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Human Interface</a>
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Resources</a>
+	          <a href="#" class="block py-2 text-gray-400 hover:text-white">Design Tools</a>
+	        </div>
+	      </div>
+	      
+	      <a href="#" class="block py-2 border-b border-gray-700">Develop</a>
+	      <a href="#" class="block py-2 border-b border-gray-700">Distribute</a>
+	      <a href="#" class="block py-2 border-b border-gray-700">Support</a>
+	    </div>
+	  </div>
+	</nav>
 
-    // Menampilkan hitungan mundur pada elemen HTML dengan dua digit
-    document.getElementById("days").innerText = formatTime(days);
-    document.getElementById("hours").innerText = formatTime(hours);
-    document.getElementById("minutes").innerText = formatTime(minutes);
-    document.getElementById("seconds").innerText = formatTime(seconds);
+	<!-- Hero Section -->
+    <section class="bg-black py-20 px-6">
+        <div class="max-w-5xl w-full bg-neutral-900 p-12 rounded-3xl mx-auto text-center fade-in" data-aos="fade-in" data-aos-duration="1000" data-aos-once="true">
+        	<div class="bg-neutral-900 rounded-full overflow-hidden w-44 mx-auto mb-6">
+        		<img src="assets/profile.jpg" class="w-full h-full">
+        	</div>
+        	<h2 class="text-4xl mb-4">Hello World!</h2>
+            <h1 class="text-4xl md:text-5xl text-primary font-semibold mb-5" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800" data-aos-once="true">I'm Sultan Rahmatullah</h1>
+            <p class="text-lg mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" data-aos-once="true">I'm a <span class="text-amber-500">Software Engineer</span> with expertise in <span class="text-pink-500">iOS, Flutter, and .NET technologies</span>. I am driven by a commitment to writing clean, maintainable code and developing scalable applications that deliver exceptional user experiences.</p>
+            <a href="#work" class="inline-block bg-neutral-950/60 hover:bg-sky-950/40 hover:ring-2 hover:ring-primary text-white px-8 py-3 rounded-full font-medium transform transition duration-[500ms] ease-in-out" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" data-aos-once="true">View My Resume</a>
+        </div>
+    </section>
 
-    // Jika hitungan mundur berakhir, hentikan interval
-    if (timeLeft <= 0) {
-    	clearInterval(timer);
-    }
-}, 1000);
+    <!-- Project Section -->
+    <section id="work" class="py-20 pb-12 px-6 bg-black">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-[2.4rem] font-bold mb-10 text-left fade-in" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800" data-aos-once="true">Projects</h2>
+            <h2 class="text-3xl font-semibold mb-8 text-left fade-in" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-once="true">Applications</h2>
+            
+            <div id="applications-list" class="grid md:grid-cols-2 gap-8"></div>
+            
+            <div class="text-center mt-12 fade-in delay-4">
+                <a href="#work" class="inline-block bg-neutral-900 hover:bg-sky-950/40 hover:ring-2 ring-primary text-white px-8 py-3 rounded-full font-medium transform transition duration-[500ms] ease-in-out">View All Projects</a>
+            </div>
+        </div>
+    </section>
 
-</script>
+    <!-- Project Section -->
+    <section id="work" class="py-12 px-6 bg-black">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-semibold mb-8 text-left fade-in" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-once="true">Websites</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="rounded-3xl bg-neutral-900 overflow-hidden shadow-md card-hover fade-in delay-1" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000" data-aos-once="true">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 1" class="w-full h-64 object-cover">
+                    <div class="p-6 flex-1 text-center">
+                        <h3 class="text-2xl font-semibold mb-4">E-commerce Platform</h3>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">UI Design</span>
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">Frontend</span>
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">E-commerce</span>
+                        </div>
+                        <div class="py-2">
+                        	<a href="#work" class="text-primary hover:underline flex justify-center items-center">
+                        	Visit Website
+                        	<svg xmlns="http://www.w3.org/2000/svg" width="13" class="mt-1 ml-1" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+                        	    <path d="M4 2l4 4-4 4" />
+                        	  </svg>
+                        	</a>
+                    	</div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="rounded-3xl bg-neutral-900 overflow-hidden shadow-md card-hover fade-in delay-1" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 1" class="w-full h-64 object-cover">
+                    <div class="p-6 flex-1 text-center">
+                        <h3 class="text-2xl font-semibold mb-4">E-commerce Platform</h3>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">UI Design</span>
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">Frontend</span>
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">E-commerce</span>
+                        </div>
+                        <div class="py-2">
+                        	<a href="#work" class="text-primary hover:underline flex justify-center items-center">
+                        	Visit Website
+                        	<svg xmlns="http://www.w3.org/2000/svg" width="13" class="mt-1 ml-1" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+                        	    <path d="M4 2l4 4-4 4" />
+                        	  </svg>
+                        	</a>
+                    	</div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="rounded-3xl bg-neutral-900 overflow-hidden shadow-md card-hover fade-in delay-1" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 1" class="w-full h-64 object-cover">
+                    <div class="p-6 flex-1 text-center">
+                        <h3 class="text-2xl font-semibold mb-4">E-commerce Platform</h3>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">UI Design</span>
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">Frontend</span>
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">E-commerce</span>
+                        </div>
+                        <div class="py-2">
+                        	<a href="#work" class="text-primary hover:underline flex justify-center items-center">
+                        	Visit Website
+                        	<svg xmlns="http://www.w3.org/2000/svg" width="13" class="mt-1 ml-1" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+                        	    <path d="M4 2l4 4-4 4" />
+                        	  </svg>
+                        	</a>
+                    	</div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="rounded-3xl bg-neutral-900 overflow-hidden shadow-md card-hover fade-in delay-1" data-aos="fade-in" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 1" class="w-full h-64 object-cover">
+                    <div class="p-6 flex-1 text-center">
+                        <h3 class="text-2xl font-semibold mb-4">E-commerce Platform</h3>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">UI Design</span>
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">Frontend</span>
+                            <span class="bg-neutral-800 text-sm px-3 py-1 rounded-full">E-commerce</span>
+                        </div>
+                        <div class="py-2">
+                        	<a href="#work" class="text-primary hover:underline flex justify-center items-center">
+                        	Visit Website
+                        	<svg xmlns="http://www.w3.org/2000/svg" width="13" class="mt-1 ml-1" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1">
+                        	    <path d="M4 2l4 4-4 4" />
+                        	  </svg>
+                        	</a>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in delay-4">
+                <a href="#work" class="inline-block bg-neutral-900 hover:bg-sky-950/40 hover:ring-2 ring-primary text-white px-8 py-3 rounded-full font-medium transform transition duration-[500ms] ease-in-out">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-neutral-900 text-neutral-400">
+        <div class="max-w-6xl mx-auto text-center">
+            <p>© 2025 Tanbopp. All rights reserved.</p>
+        </div>
+    </footer>
+
+	<!-- AOS Animation JS -->
+	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<script>
+	  AOS.init();
+	</script>
 
 	<script>
-		var audio = document.getElementById("myAudio");
+	  // Toggle mobile menu
+	  const menuToggle = document.getElementById('menu-toggle');
+	  const mobileMenu = document.getElementById('mobile-menu');
+	  
+	  menuToggle.addEventListener('click', () => {
+	    mobileMenu.classList.toggle('hidden');
+	  });
+	  
+	  // Toggle mobile submenus
+	  const mobileSubmenuButtons = document.querySelectorAll('#mobile-menu button');
+	  mobileSubmenuButtons.forEach(button => {
+	    button.addEventListener('click', () => {
+	      const submenu = button.nextElementSibling;
+	      submenu.classList.toggle('hidden');
+	    });
+	  });
+	</script>
 
-        // Fungsi untuk memainkan audio
-        function playAudio() {
-            audio.play();
-        }	
-    </script>
+	<script type="module">
+	import { applications } from './projects/data.js';
+
+const appList = document.getElementById('applications-list');
+if (appList && applications) {
+  appList.innerHTML = applications.map((app, idx) => `
+    <div class="rounded-3xl bg-neutral-900 overflow-hidden shadow-md card-hover fade-in delay-1" data-aos="fade-in" data-aos-delay="${100 * (idx + 1)}" data-aos-duration="1000" data-aos-once="true">
+      <img src="${app.image}" alt="${app.title}" class="w-full h-64 object-cover">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-4">${app.title}</h3>
+        <div class="flex flex-wrap gap-2 mb-4">
+          ${app.tags.map(tag => `<span class='bg-neutral-800 text-sm px-3 py-1 rounded-full'>${tag}</span>`).join('')}
+        </div>
+        <a href="${app.link}" class="inline-block bg-neutral-950/60 hover:bg-sky-950/40 hover:ring-2 ring-primary text-white px-6 py-2 rounded-full font-medium transform transition duration-[500ms] ease-in-out">View Work</a>
+      </div>
+    </div>
+  `).join('');
+}
+	</script>
 </body>
 </html>
